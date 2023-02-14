@@ -1,0 +1,3 @@
+ .\webdev\college_proj\myvenv\Scripts\activate.ps1
+
+ .\myvenv\Scripts\activate.ps1

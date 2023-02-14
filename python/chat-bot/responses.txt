@@ -1,0 +1,10 @@
+name chatbot1:cb1
+language:python
+level:beginner
+capital of France:Rome
+what is capital of France:Rome
+
+
+
+
+
