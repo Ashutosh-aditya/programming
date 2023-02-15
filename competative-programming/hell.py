@@ -29,7 +29,7 @@ op=vov.findall("THE QUICK BROWN FOX JUMP OVER THE LAZY DOG ,the quick brown fox 
 print(op)
 
 alp=re.compile(r"[a-zA-Z0-9]+")
-op1=alp.findall("THE QUICK BROWN FOX JUMP OVER THE LAZY DOG ,the quick brown fox jumps over the lazy dog")
+op1=alp.findall("THE QUICK BROWN FOX JUMP OVER THE LAZY DOG ,the quick brown fox jumps over the lazy dog ")
 print(op1)
 
 
