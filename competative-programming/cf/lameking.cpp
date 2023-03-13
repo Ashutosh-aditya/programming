@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 int min(int x,int y)
 {
     if(x<y)
