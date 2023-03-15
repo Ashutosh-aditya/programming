@@ -30,14 +30,14 @@ int main() {
         int a,b;
         cin >> a >> b;
         int moves=0;
-        if(a==b)
-            moves=a+b;
-        else
-        {
             if(a<0)
                 a=a*-1;
             if(b<0)
                 b=b*-1;
+        if(a==b)
+            moves=a+b;
+        else
+        {
             moves=2*min(a,b);
             int rest=max(a,b);
             int diff=max(a,b)-min(a,b);
