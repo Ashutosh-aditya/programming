@@ -7,7 +7,7 @@ int main()
     cin>>n;
     if(n<26)
     {
-        if((n<15)) 
+        if((n%5!=0)) 
         cout<<"YES";
         else
         cout<<"NO";
