@@ -60,31 +60,32 @@ public class bford
     {
         int num_ver = 0;
             int source;
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Enter the number of vertices");
-            num_ver = scanner.nextInt();
-            int A[][] = new int[num_ver + 1][num_ver + 1];
-            System.out.println("Enter the adjacency matrix");
-            for (int sn = 1; sn <= num_ver; sn++) 
-            {
-                for (int dn = 1; dn <= num_ver; dn++) 
+            try (Scanner scanner = new Scanner(System.in)) {
+                System.out.println("Enter the number of vertices");
+                num_ver = scanner.nextInt();
+                int A[][] = new int[num_ver + 1][num_ver + 1];
+                System.out.println("Enter the adjacency matrix");
+                for (int sn = 1; sn <= num_ver; sn++) 
                 {
-                    A[sn][dn] = scanner.nextInt();
-                    if (sn == dn) 
+                    for (int dn = 1; dn <= num_ver; dn++) 
                     {
-                        A[sn][dn] = 0;
-                        continue;
-                    }
-                    if (A[sn][dn] == 0) 
-                    {
-                        A[sn][dn] = MAX_VALUE;
+                        A[sn][dn] = scanner.nextInt();
+                        if (sn == dn) 
+                        {
+                            A[sn][dn] = 0;
+                            continue;
+                        }
+                        if (A[sn][dn] == 0) 
+                        {
+                            A[sn][dn] = MAX_VALUE;
+                        }
                     }
                 }
+                System.out.println("Enter the source vertex");
+                source = scanner.nextInt();
+                bford f1 = new bford(num_ver);
+                f1.beval(source,A);
             }
-            System.out.println("Enter the source vertex");
-            source = scanner.nextInt();
-            bford f1 = new bford(num_ver);
-            f1.beval(source,A);
 
     }
 }

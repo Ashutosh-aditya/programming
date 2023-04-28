@@ -1,6 +1,5 @@
 import java.util.*;
 import java.io.*;
-import java.math.*;
 public class rsa1 {
 
     public static int gcd(int m,int n)

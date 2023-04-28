@@ -19,35 +19,36 @@ public class Crc {
         } while (e <= a + n - 1);
     }
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        System.out.println("Enter the size of chat word:");
-        a = in.nextInt();
-        System.out.println("Enter dataword:");
-        for (int i = 0; i < a; i++)
-            t[i] = in.nextInt();
-        for (e = a; e < a + n - 1; e++)
-            t[e] = 0;
-        System.out.println("Modified Datawords:");
-        for (int i = 0; i < a + n - 1; i++)
-            System.out.println(t[i]);
-        crc();
-        System.out.println("checksum");
-        for (int i = 0; i < n - 1; i++)
-            System.out.println(cs[i]);
-        for (int e = a; e < a + n - 1; e++)
-            t[e] = cs[e - a];
-        System.out.println("Final codeword");
-        for (int i = 0; i < a + n - 1; i++)
-            System.out.println(t[i]);
-        System.out.println("Test error detection? 0(yes)/1(no)");
-        e = in.nextInt();
-        if (e == 0) {
-            System.out.format("Enter position b/w %d and %d where error is to be introduced ", 0, a - 1);
-            e = in.nextInt();
-            t[e] = (t[e] == 0 ? 1 : 0);
-            System.out.println("Dataword after error:");
+        try (Scanner in = new Scanner(System.in)) {
+            System.out.println("Enter the size of chat word:");
+            a = in.nextInt();
+            System.out.println("Enter dataword:");
             for (int i = 0; i < a; i++)
+                t[i] = in.nextInt();
+            for (e = a; e < a + n - 1; e++)
+                t[e] = 0;
+            System.out.println("Modified Datawords:");
+            for (int i = 0; i < a + n - 1; i++)
                 System.out.println(t[i]);
+            crc();
+            System.out.println("checksum");
+            for (int i = 0; i < n - 1; i++)
+                System.out.println(cs[i]);
+            for (int e = a; e < a + n - 1; e++)
+                t[e] = cs[e - a];
+            System.out.println("Final codeword");
+            for (int i = 0; i < a + n - 1; i++)
+                System.out.println(t[i]);
+            System.out.println("Test error detection? 0(yes)/1(no)");
+            e = in.nextInt();
+            if (e == 0) {
+                System.out.format("Enter position b/w %d and %d where error is to be introduced ", 0, a - 1);
+                e = in.nextInt();
+                t[e] = (t[e] == 0 ? 1 : 0);
+                System.out.println("Dataword after error:");
+                for (int i = 0; i < a; i++)
+                    System.out.println(t[i]);
+            }
         }
         crc();
         for (e = 0; e < n - 1 && (cs[e] != 1); e++);

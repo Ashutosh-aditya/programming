@@ -84,6 +84,7 @@ public class rsaedited {
             {
                 System.out.print(msg1[i]+"");
             }
+            in.close();
         }
         catch(Exception e)
         {

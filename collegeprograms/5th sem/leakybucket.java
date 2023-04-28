@@ -9,16 +9,17 @@ public class leakybucket {
     public static void main(String args[]) {
         int drop = 0, mini, nsec, bsize, count = 0, i, orate;
         int inp[] = new int[25];
-        Scanner in = new Scanner(System.in);
-        System.out.println("enter bucket size");
-        bsize = in.nextInt();
-        System.out.println("enter operation rate");
-        orate = in.nextInt();
-        System.out.println("enter number of seconds");
-        nsec = in.nextInt();
-        for (i = 0; i < nsec; i++) {
-            System.out.println("enter the size of packet entering at " + (i + 1) + " sec ");
-            inp[i] = in.nextInt();
+        try (Scanner in = new Scanner(System.in)) {
+            System.out.println("enter bucket size");
+            bsize = in.nextInt();
+            System.out.println("enter operation rate");
+            orate = in.nextInt();
+            System.out.println("enter number of seconds");
+            nsec = in.nextInt();
+            for (i = 0; i < nsec; i++) {
+                System.out.println("enter the size of packet entering at " + (i + 1) + " sec ");
+                inp[i] = in.nextInt();
+            }
         }
         System.out.println("SECOND \tPACKET RECIEVED\t PACKET SENT \tPACKET LEFT  \tPACKET DROPPED\n ");
         for (i = 0; i < nsec; i++) 
