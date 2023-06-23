@@ -1,4 +1,5 @@
 #include<GL/glut.h>
+#include<stdio.h>
 #define NULL 0
 static GLfloat angle=90;
 int sb,db;
