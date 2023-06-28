@@ -1,4 +1,5 @@
 //cpu sheduling
+
 #include <stdio.h>
 #include <stdlib.h>
 int no;
