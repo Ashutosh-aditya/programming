@@ -40,8 +40,7 @@ for (;;) {
 }
 
 void roundrobin(int n, int tq, int st[], int bt[]) {
-int time = 0;
-int tat[10], wt[10], i, count = 0, swt = 0, temp1, sq = 0, j, k, stat = 0;
+int tat[10], wt[10], i, count = 0, swt = 0, temp1, sq = 0, stat = 0;
 float awt = 0.0, atat = 0.0;
 while (1) {
     for (i = 0, count = 0; i < n; i++) {
@@ -76,40 +75,38 @@ printf("average waiting time is %f\n average turnaround time is %f\n", awt,
 }
 
 void srtf() {
-int n, j = 0, st[10], bt[10], rt[10], remain = 0, smallest, time = 0, i,
-        endtime, swt = 0, stat = 0;
-printf("enter no of processes\n");
-scanf("%d", &n);
-for (i = 0; i < n; i++) {
-    printf("enter arrival time for p[%d]:", i + 1);
-    scanf("%d", &st[i]);
-    printf("enter the burst time for p[%d]:", i + 1);
-    scanf("%d", &bt[i]);
-    rt[i] = bt[i];
-}
-rt[100] = 999;
-printf("process\t|wwaiting time\t|turnaround time\n");
-for (time = 0; remain != n; time++) {
-    smallest = 100;
+    int n, j = 0, st[10], bt[10], rt[10], remain = 0, smallest, time = 0, i,endtime, swt = 0, stat = 0;
+    printf("enter no of processes\n");
+    scanf("%d", &n);
     for (i = 0; i < n; i++) {
-    if (st[i] <= time && rt[i] < rt[smallest] && rt[i] > 0) {
-        smallest = i;
+        printf("enter arrival time for p[%d]:", i + 1);
+        scanf("%d", &st[i]);
+        printf("enter the burst time for p[%d]:", i + 1);
+        scanf("%d", &bt[i]);
+        rt[i] = bt[i];
     }
+    rt[100] = 999;
+    printf("process\t|waiting time\t|turnaround time\n");
+    for (time = 0; remain != n; time++) {
+        smallest = 100;
+        for (i = 0; i < n; i++) {
+        if (st[i] <= time && rt[i] < rt[smallest] && rt[i] > 0) {
+            smallest = i;
+        }
+        }
+        rt[smallest]--;
+        if (rt[smallest] == 0) {
+        remain++;
+        endtime = time + 1;
+        j = smallest;
+        printf("p[%d]\t\t%d\t\t%d\n", smallest + 1, endtime - bt[j] - st[j],endtime - st[j]);
+        swt += endtime - bt[j] - st[j];
+        stat += endtime - st[j];
+        }
     }
-    rt[smallest]--;
-    if (rt[smallest] == 0) {
-    remain++;
-    endtime = time + 1;
-    j = smallest;
-    printf("p[%d]\t\t%d\t\t%d\n", smallest + 1, endtime - bt[j] - st[j],
-            endtime - st[j]);
-    swt += endtime - bt[j] - st[j];
-    stat += endtime - st[j];
-    }
-}
-float awt = 0.0, atat = 0.0;
-awt = (float)swt / n;
-atat = (float)stat / n;
-printf("average waiting time %f\n", awt);
-printf("average turnaround time %f\n", atat);
+    float awt = 0.0, atat = 0.0;
+    awt = (float)swt / n;
+    atat = (float)stat / n;
+    printf("average waiting time %f\n", awt);
+    printf("average turnaround time %f\n", atat);
 }
