@@ -24,7 +24,6 @@ if (dy < 0) dy = -dy;
 
 if (x2 < x1)
     cx = -1;
-
 if (y2 < y1)
     cy = -1;
 
