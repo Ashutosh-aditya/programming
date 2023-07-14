@@ -55,6 +55,7 @@ for (i = 0; i < n; i++) {
 }
 printf("\nTotal no of page faults in FIFO is %d", pgfaultcnt);
 }
+
 void lru() {
 initilize();
 int least[50];
