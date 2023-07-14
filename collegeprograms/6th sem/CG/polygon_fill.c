@@ -9,20 +9,9 @@ int n = 30;
 int r = 0, b = 0, g = 0;
 void colormenu(int id) {
 switch (id) {
-case 2:
-    r = 1;
-    g = 0;
-    b = 0;
-    break;
-case 3:
-    r = 0;
-    g = 0;
-    b = 1;
-    break;
-case 4:
-    r = 0;
-    g = 1;
-    b = 0;
+case 2:r = 1;g = 0;b = 0;break;
+case 3:r = 0;g = 0;b = 1;break;
+case 4:r = 0;g = 1;b = 0;
 }
 glutPostRedisplay();
 }

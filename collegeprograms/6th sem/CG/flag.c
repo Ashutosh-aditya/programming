@@ -1,14 +1,9 @@
 //Develop a menu driven program to animate a flag using Bezier Curve algorithm.	
 #include<stdio.h>
-
 #include<stdlib.h>
-
 #include<GL/glut.h>
-
 #include<math.h>
-
 #include<iostream>
-
 # define PI 3.1416
 GLsizei w = 600, h = 600;
 GLfloat xmin = 0.0, xmax = 120.0;
@@ -17,10 +12,8 @@ GLfloat ymin = 0.0, ymax = 120.0;
 #define stop 2
 #define quit 3
 class w3d {
-public: GLfloat x,
-y,
-z;
-};
+public: 
+    GLfloat x,y,z;};
 
 void bino(GLint n, GLint * c) {
 GLint k, j;
@@ -64,28 +57,11 @@ static float t = 0;
 void display() {
 GLint i, ncp = 4, nbcp = 20;
 
-w3d cp[4] = {
-    {
-    20,
-    100,
-    0
-    },
-    {
-    30,
-    110,
-    0
-    },
-    {
-    50,
-    90,
-    0
-    },
-    {
-    60,
-    100,
-    0
-    }
-};
+w3d cp[4]={
+{20,100,0},
+{30,110,0},
+{50,90,0},
+{60,100,0}};
 
 cp[1].x += 10 * sin(t * PI / 180.0);
 cp[1].y += 5 * sin(t * PI / 180.0);

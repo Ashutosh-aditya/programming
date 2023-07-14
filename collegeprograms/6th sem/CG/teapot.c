@@ -3,8 +3,7 @@ void teapot(GLfloat x, GLfloat y, GLfloat z) {
     glPushMatrix();         // save the current state
     glTranslatef(x, y, z);  // move teapot to required position appropriately
     glutSolidTeapot(0.1);   // render your teapot
-    glPopMatrix();  // get back your state with the recent changes that you have
-                    // done
+    glPopMatrix();  // get back your state with the recent changes that you have done
 }
 void tableTop(GLfloat x, GLfloat y,
               GLfloat z)  // table top which is actually a CUBE
