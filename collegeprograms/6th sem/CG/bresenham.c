@@ -10,11 +10,13 @@ glClearColor(0.0, 0.0, 0.0, 1.0);
 glMatrixMode(GL_PROJECTION);
 gluOrtho2D(0, 500, 0, 500);
 }
+
 void dp(int x, int y) {
 glBegin(GL_POINTS);
 glVertex2i(x, y);
 glEnd();
 }
+
 void dl(int x1, int x2, int y1, int y2) {
 int x, y, cx = 1, cy = 1, dx, dy, c1, c2, i, e;
 dx = x2 - x1;
