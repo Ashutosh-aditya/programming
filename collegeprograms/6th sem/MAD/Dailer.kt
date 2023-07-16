@@ -1,6 +1,6 @@
 Dialer program
 
-Dialer.kt 
+//Dialer.kt 
 package com.example.dialer2
 
 import android.content.Intent
